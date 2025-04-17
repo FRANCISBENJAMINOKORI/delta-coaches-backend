@@ -7,6 +7,10 @@ const bookingRoutes = require('./routes/bookingRoutes');
 const authRoutes = require('./routes/authRoutes');
 
 const app = express();
+
+app.use(express.json());
+app.use('/api/bookings', bookingRoutes);
+
 //Middleware
 app.use(cors());
 app.use(bodyParser.json());
